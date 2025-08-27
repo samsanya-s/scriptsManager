@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Тестовый скрипт",
+    "description": "скрипт для тестов",
+    "path": "C:/Users/Administrator/PycharmProjects/pythonProject1/t2.py",
+    "language": "python",
+    "mode": "function",
+    "params": []
+  },
+  {
+    "name": "Новый скрипт",
+    "description": "новый скрипт для теста",
+    "path": "C:/Users/Administrator/PycharmProjects/pythonProject1/new.py",
+    "language": "python",
+    "mode": "function",
+    "params": []
+  },
+  {
+    "name": "Тест режимов",
+    "description": "наме",
+    "path": "C:/Users/Administrator/PycharmProjects/pythonProject1/test.py",
+    "language": "python",
+    "mode": "script",
+    "params": [
+      {
+        "name": "test_param",
+        "type": "строка"
+      }
+    ]
+  }
+]
