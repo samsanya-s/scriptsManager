@@ -1,31 +1,95 @@
 [
   {
-    "name": "Тестовый скрипт",
-    "description": "скрипт для тестов",
-    "path": "C:/Users/Administrator/PycharmProjects/pythonProject1/t2.py",
+    "name": "Конвертер функци БП",
+    "description": "Конвертирует функции БП с Эталона 2 на Эталон 3",
+    "path": "C:/Users/a.medvedev/Documents/scripts/converterBP.py",
     "language": "python",
     "mode": "function",
-    "params": []
-  },
-  {
-    "name": "Новый скрипт",
-    "description": "новый скрипт для теста",
-    "path": "C:/Users/Administrator/PycharmProjects/pythonProject1/new.py",
-    "language": "python",
-    "mode": "function",
-    "params": []
-  },
-  {
-    "name": "Тест режимов",
-    "description": "наме",
-    "path": "C:/Users/Administrator/PycharmProjects/pythonProject1/test.py",
-    "language": "python",
-    "mode": "script",
     "params": [
       {
-        "name": "test_param",
+        "name": "input_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "7c3910d6-0560-46ea-84ce-10d5904c6c5d"
+  },
+  {
+    "name": "Поиск объектов по назвинию/коду",
+    "description": "Ищет в папке (и вложенных в неё) файлы xml и ищет все вхождения названий и кодов и т.д.....",
+    "path": "C:/Users/a.medvedev/Documents/scripts/findConfigs.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "folder_find",
+        "type": "путь до директории"
+      },
+      {
+        "name": "tag",
+        "type": "строка"
+      },
+      {
+        "name": "names",
+        "type": "список строк"
+      },
+      {
+        "name": "add_filter_tag",
         "type": "строка"
       }
-    ]
+    ],
+    "id": "22839e1d-abfd-4272-8ca1-016a1fe8e1a3"
+  },
+  {
+    "name": "Поиск показателей",
+    "description": "",
+    "path": "C:/Users/a.medvedev/Documents/scripts/findIndicators.py",
+    "language": "python",
+    "mode": "script",
+    "params": [],
+    "id": "b2379481-0b42-4b9f-aee7-a9e9f910dc26"
+  },
+  {
+    "name": "Замена функций SQL",
+    "description": "",
+    "path": "C:/Users/a.medvedev/Documents/scripts/SQLIndsReplacer.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "input_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "379628cf-ab48-4dd9-be1a-2e87f504f51f"
+  },
+  {
+    "name": "Замена выч функций SQL",
+    "description": "",
+    "path": "C:/Users/a.medvedev/Documents/scripts/SQLCalcIndsReplacer.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "inds_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "sql_file_input",
+        "type": "файловый путь"
+      },
+      {
+        "name": "sql_file_output",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "18de6492-1fc7-4f4f-a07b-7ac6b3fd8924"
   }
 ]

@@ -1,0 +1,9 @@
+{
+    "\\{\\{\\.\\.OOC\\.%Id\\(\\)\\}\\}": "j{ControlObject.getEntityLink().getId()}",
+    "\\{\\{\\.\\.ObjectFuncs\\.GetGUID\\(\\.\\.OOC\\)\\}\\}": "j{String.valueOf(ControlObject.getMainInfo().getGuid())}",
+    "\\{\\{\\.\\.OOCFuncs\\.GetValueSoft\\(\\.\\.OOC,\\ \\&\\#34;Code\\&\\#34;,\\ 100\\)\\}\\}": "j{ControlObject.getMainInfo().getCode()}",
+    "\\{\\{\\.\\.NestedFuncs\\.GetValueSoft\\(\\.\\.NestedEntity,&#34;(.+?)&#34;\\)\\}\\}": "j{String.valueOf(NestedEntity.getDynamicPart().getValueSoftByName(&#34;\\1&#34;))}",
+    "\\{\\{\\.\\.NestedEntity\\.%Id\\(\\)\\}\\}": "j{NestedEntity.getEntityLink().getId()}",
+    "\\{\\{\\.\\.ObjectFuncs\\.GetGUID\\(\\.\\.NestedEntity\\)\\}\\}": "j{String.valueOf(NestedEntity.getDynamicPart().getInternalUUID())}",
+    "\\{\\{\\$lts\\(\\.\\.NestedFuncs\\.GetValueSoft\\(\\.\\.NestedEntity, &#34;(.+?)&#34;\\)\\)\\}\\}": "j{$lts(String.valueOf(NestedEntity.getDynamicPart().getValueSoftByName(&#34;\\1&#34;)))}"
+}
