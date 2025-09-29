@@ -2,7 +2,7 @@ import re
 import json
 import os
 
-REPLACEMENTS_FILE = r"C:\Users\a.medvedev\Documents\scripts\replacements.json"
+REPLACEMENTS_FILE = r"C:\Users\a.medvedev\Documents\projects\managerScripts\scriptsManager\Scripts\replacements.json"
 input_file = r"C:\Users\a.medvedev\Documents\code\Добавить данные по Допланированию для Цифрового паспорта региона.bpmn"
 output_file = r"C:\Users\a.medvedev\Documents\code\Добавить данные по Допланированию для Цифрового паспорта региона3.bpmn"
 

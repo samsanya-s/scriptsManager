@@ -1,145 +1,175 @@
-[{
-        "name": "Конвертер функци БП",
-        "description": "Конвертирует функции БП с Эталона 2 на Эталон 3",
-        "path": "./Scripts/converterBP.py",
-        "language": "python",
-        "mode": "function",
-        "params": [{
-                "name": "input_file",
-                "type": "файловый путь"
-            },
-            {
-                "name": "output_file",
-                "type": "файловый путь"
-            }
-        ],
-        "id": "7c3910d6-0560-46ea-84ce-10d5904c6c5d"
-    },
-    {
-        "name": "Поиск объектов по назвинию/коду",
-        "description": "Ищет в папке (и вложенных в неё) файлы xml и ищет все вхождения названий и кодов и т.д.....",
-        "path": "./Scripts/findConfigs.py",
-        "language": "python",
-        "mode": "function",
-        "params": [{
-                "name": "folder_find",
-                "type": "путь до директории"
-            },
-            {
-                "name": "tag",
-                "type": "строка"
-            },
-            {
-                "name": "names",
-                "type": "список строк"
-            },
-            {
-                "name": "add_filter_tag",
-                "type": "строка"
-            }
-        ],
-        "id": "22839e1d-abfd-4272-8ca1-016a1fe8e1a3"
-    },
-    {
-        "name": "Поиск показателей",
-        "description": "",
-        "path": "./Scripts/findIndicators.py",
-        "language": "python",
-        "mode": "script",
-        "params": [],
-        "id": "b2379481-0b42-4b9f-aee7-a9e9f910dc26"
-    },
-    {
-        "name": "Замена функций SQL",
-        "description": "",
-        "path": "./Scripts/SQLIndsReplacer.py",
-        "language": "python",
-        "mode": "function",
-        "params": [{
-                "name": "input_file",
-                "type": "файловый путь"
-            },
-            {
-                "name": "output_file",
-                "type": "файловый путь"
-            }
-        ],
-        "id": "379628cf-ab48-4dd9-be1a-2e87f504f51f"
-    },
-    {
-        "name": "Замена выч функций SQL",
-        "description": "",
-        "path": "./Scripts/SQLCalcIndsReplacer.py",
-        "language": "python",
-        "mode": "function",
-        "params": [{
-                "name": "inds_file",
-                "type": "файловый путь"
-            },
-            {
-                "name": "sql_file_input",
-                "type": "файловый путь"
-            },
-            {
-                "name": "sql_file_output",
-                "type": "файловый путь"
-            }
-        ],
-        "id": "18de6492-1fc7-4f4f-a07b-7ac6b3fd8924"
-    },
-    {
-        "name": "Создание config-manifest для ОК",
-        "description": "Создаёт конфиг манифест для ОК или ВлС собирая связанные ВлС и справочники",
-        "path": "./Scripts/createConfigForOC.py",
-        "language": "python",
-        "mode": "function",
-        "params": [{
-                "name": "INPUT_DIR",
-                "type": "путь до директории"
-            },
-            {
-                "name": "OUTPUT_FILE",
-                "type": "файловый путь"
-            }
-        ],
-        "id": "f980dd69-ac04-40ea-a59b-2ab57ac70f4b"
-    },
-    {
-        "name": "Создание config-manifest для Выборок",
-        "description": "Создаёт конфиг манифест для выборки, собирая другие выборки от которых она зависит",
-        "path": "./Scripts/createConfigForQuery.py",
-        "language": "python",
-        "mode": "function",
-        "params": [{
-                "name": "INPUT_FILE",
-                "type": "файловый путь"
-            },
-            {
-                "name": "OUTPUT_FILE",
-                "type": "файловый путь"
-            }
-        ],
-        "id": "c70a7c8d-73ee-4fba-b70e-cc1ea17b1f17"
-    },
-    {
-        "name": "Перевод справочника с Эталона 2 на Эталон 3",
-        "description": "",
-        "path": "./Scripts/dict_migrate.py",
-        "language": "python",
-        "mode": "script",
-        "params": [{
-                "name": "input_file",
-                "type": "файловый путь"
-            },
-            {
-                "name": "output_file",
-                "type": "файловый путь"
-            },
-            {
-                "name": "dictionary_code",
-                "type": "строка"
-            }
-        ],
-        "id": "bee2c829-e8f4-44e6-9909-16b12d1e877a"
-    }
+[
+  {
+    "name": "Поиск объектов по назвинию/коду",
+    "description": "Ищет в папке (и вложенных в неё) файлы xml и ищет все вхождения названий и кодов и т.д.....",
+    "path": "./Scripts/findConfigs.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "folder_find",
+        "type": "путь до директории"
+      },
+      {
+        "name": "tag",
+        "type": "строка"
+      },
+      {
+        "name": "names",
+        "type": "список строк"
+      },
+      {
+        "name": "add_filter_tag",
+        "type": "строка"
+      }
+    ],
+    "id": "22839e1d-abfd-4272-8ca1-016a1fe8e1a3"
+  },
+  {
+    "name": "Поиск показателей",
+    "description": "",
+    "path": "./Scripts/findIndicators.py",
+    "language": "python",
+    "mode": "script",
+    "params": [],
+    "id": "b2379481-0b42-4b9f-aee7-a9e9f910dc26"
+  },
+  {
+    "name": "Замена функций SQL",
+    "description": "",
+    "path": "./Scripts/SQLIndsReplacer.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "input_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "379628cf-ab48-4dd9-be1a-2e87f504f51f"
+  },
+  {
+    "name": "Замена выч функций SQL",
+    "description": "",
+    "path": "./Scripts/SQLCalcIndsReplacer.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "inds_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "sql_file_input",
+        "type": "файловый путь"
+      },
+      {
+        "name": "sql_file_output",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "18de6492-1fc7-4f4f-a07b-7ac6b3fd8924"
+  },
+  {
+    "name": "Создание config-manifest для ОК",
+    "description": "Создаёт конфиг манифест для ОК или ВлС собирая связанные ВлС и справочники",
+    "path": "./Scripts/createConfigForOC.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "INPUT_DIR",
+        "type": "путь до директории"
+      },
+      {
+        "name": "OUTPUT_FILE",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "f980dd69-ac04-40ea-a59b-2ab57ac70f4b"
+  },
+  {
+    "name": "Создание config-manifest для Выборок",
+    "description": "Создаёт конфиг манифест для выборки, собирая другие выборки от которых она зависит",
+    "path": "./Scripts/createConfigForQuery.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "INPUT_FILE",
+        "type": "файловый путь"
+      },
+      {
+        "name": "OUTPUT_FILE",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "c70a7c8d-73ee-4fba-b70e-cc1ea17b1f17"
+  },
+  {
+    "name": "Перевод справочника с Эталона 2 на Эталон 3",
+    "description": "",
+    "path": "./Scripts/dict_migrate.py",
+    "language": "python",
+    "mode": "script",
+    "params": [
+      {
+        "name": "input_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "dictionary_code",
+        "type": "строка"
+      }
+    ],
+    "id": "bee2c829-e8f4-44e6-9909-16b12d1e877a"
+  },
+  {
+    "name": "Конвертер функци БП",
+    "description": "",
+    "path": "C:/Users/a.medvedev/Documents/projects/managerScripts/scriptsManager/Scripts/converterBP.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "input_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "bbb9f79b-423f-4ed8-ab40-84ab9a5b4547"
+  },
+  {
+    "name": "Конвертер показателей с Э2 на Э3",
+    "description": "",
+    "path": "C:/Users/a.medvedev/Documents/projects/managerScripts/scriptsManager/Scripts/covertIndicators.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "input_xml",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_xml",
+        "type": "файловый путь"
+      },
+      {
+        "name": "codes",
+        "type": "список строк"
+      }
+    ],
+    "id": "73eb1771-b3d0-41dd-9263-7342336e701b"
+  }
 ]
