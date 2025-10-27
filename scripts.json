@@ -2,7 +2,7 @@
   {
     "name": "Поиск объектов по назвинию/коду",
     "description": "Ищет в папке (и вложенных в неё) файлы xml и ищет все вхождения названий и кодов и т.д.....",
-    "path": "./Scripts/findConfigs.py",
+    "path": "Scripts/findConfigs.py",
     "language": "python",
     "mode": "function",
     "params": [
@@ -28,7 +28,7 @@
   {
     "name": "Поиск показателей",
     "description": "",
-    "path": "./Scripts/findIndicators.py",
+    "path": "Scripts/findIndicators.py",
     "language": "python",
     "mode": "script",
     "params": [],
@@ -37,7 +37,7 @@
   {
     "name": "Замена функций SQL",
     "description": "",
-    "path": "./Scripts/SQLIndsReplacer.py",
+    "path": "Scripts/SQLIndsReplacer.py",
     "language": "python",
     "mode": "function",
     "params": [
@@ -55,7 +55,7 @@
   {
     "name": "Замена выч функций SQL",
     "description": "",
-    "path": "./Scripts/SQLCalcIndsReplacer.py",
+    "path": "Scripts/SQLCalcIndsReplacer.py",
     "language": "python",
     "mode": "function",
     "params": [
@@ -77,7 +77,7 @@
   {
     "name": "Создание config-manifest для ОК",
     "description": "Создаёт конфиг манифест для ОК или ВлС собирая связанные ВлС и справочники",
-    "path": "./Scripts/createConfigForOC.py",
+    "path": "Scripts/createConfigForOC.py",
     "language": "python",
     "mode": "function",
     "params": [
@@ -95,7 +95,7 @@
   {
     "name": "Создание config-manifest для Выборок",
     "description": "Создаёт конфиг манифест для выборки, собирая другие выборки от которых она зависит",
-    "path": "./Scripts/createConfigForQuery.py",
+    "path": "Scripts/createConfigForQuery.py",
     "language": "python",
     "mode": "function",
     "params": [
@@ -113,9 +113,9 @@
   {
     "name": "Перевод справочника с Эталона 2 на Эталон 3",
     "description": "",
-    "path": "./Scripts/dict_migrate.py",
+    "path": "Scripts/dict_migrate.py",
     "language": "python",
-    "mode": "script",
+    "mode": "function",
     "params": [
       {
         "name": "input_file",
@@ -171,5 +171,77 @@
       }
     ],
     "id": "73eb1771-b3d0-41dd-9263-7342336e701b"
+  },
+  {
+    "name": "Поиск ШО по условию",
+    "description": "Вложенно ищет все шаблоны отчётов в которых использовалась eav_projection_data",
+    "path": "C:/Users/a.medvedev/Documents/projects/managerScripts/scriptsManager/Scripts/FindReports.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "folder",
+        "type": "путь до директории"
+      }
+    ],
+    "id": "e73042b0-2352-4129-827f-975a225e4f97"
+  },
+  {
+    "name": "Убрать лишние атрибуты по UUID",
+    "description": "Получает текстовый файл с uuid лишних атрибутов ОК и удаляет их из заданого файла с мета схемой (Э3)",
+    "path": "C:/Users/a.medvedev/Documents/projects/managerScripts/scriptsManager/Scripts/deleteAttrs.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "meta_shema",
+        "type": "файловый путь"
+      },
+      {
+        "name": "uuids_file",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "928e1499-4fe3-4f18-a6a8-d07b59f7daff"
+  },
+  {
+    "name": "Перевод СФ с Э2 на Э3",
+    "description": "",
+    "path": "C:/Users/a.medvedev/Documents/projects/managerScripts/scriptsManager/Scripts/serviceFuctions.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "input_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "codes",
+        "type": "список строк"
+      }
+    ],
+    "id": "a4d4dfe2-1149-4069-8f23-fb25212869e6"
+  },
+  {
+    "name": "Создатель ОК (структура)",
+    "description": "создаёт структуру ОК по постановке",
+    "path": "C:/Users/a.medvedev/Documents/projects/managerScripts/scriptsManager/Scripts/OK_creator.py",
+    "language": "python",
+    "mode": "function",
+    "params": [
+      {
+        "name": "iinput_file",
+        "type": "файловый путь"
+      },
+      {
+        "name": "output_file",
+        "type": "файловый путь"
+      }
+    ],
+    "id": "7e2576ac-db68-45ac-b3f2-a1b54305fa53"
   }
 ]

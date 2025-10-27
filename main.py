@@ -8,6 +8,7 @@ Script Manager — tkinter (OOП)
 - Окно запуска содержит "консоль" с выводом процесса в реальном времени
 """
 
+from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import subprocess
@@ -111,8 +112,9 @@ class AddScriptDialog(tk.Toplevel):
         self.title("Добавить скрипт" if edit_script is None else "Редактировать скрипт")
         self.geometry("560x560")
         self.transient(parent)     # привязать к родителю
-        self.grab_set()            # модальное поведение
-        self.focus_force()
+        # self.grab_set()            # модальное поведение
+        # self.focus_force()
+        self.focus()
 
         # поля
         self.name_var = tk.StringVar()
@@ -191,12 +193,12 @@ class AddScriptDialog(tk.Toplevel):
         if filepath:
             self.path_var.set(filepath)
         # Важно: вернуть фокус на диалог, чтобы главное окно не "перекрывало"
-        try:
-            self.lift()
-            self.focus_force()
-            self.grab_set()
-        except Exception:
-            pass
+        # try:
+        #     self.lift()
+        #     self.focus_force()
+        #     self.grab_set()
+        # except Exception:
+        #     pass
 
     def _create_file(self):
         filepath = filedialog.asksaveasfilename(defaultextension=".py", filetypes=[("Python files", "*.py")])
@@ -204,12 +206,12 @@ class AddScriptDialog(tk.Toplevel):
             with open(filepath, "w", encoding="utf-8") as f:
                 f.write("# Новый скрипт\n")
             self.path_var.set(filepath)
-        try:
-            self.lift()
-            self.focus_force()
-            self.grab_set()
-        except Exception:
-            pass
+        # try:
+        #     self.lift()
+        #     self.focus_force()
+        #     self.grab_set()
+        # except Exception:
+        #     pass
 
     def _param_add(self):
         ParamDialog(self, on_save=self._param_add_save)
@@ -271,10 +273,10 @@ class AddScriptDialog(tk.Toplevel):
         self._close()
 
     def _close(self):
-        try:
-            self.grab_release()
-        except Exception:
-            pass
+        # try:
+        #     self.grab_release()
+        # except Exception:
+        #     pass
         self.destroy()
 
 
@@ -290,8 +292,9 @@ class ParamDialog(tk.Toplevel):
         self.title("Параметр")
         self.geometry("340x180")
         self.transient(parent)
-        self.grab_set()
-        self.focus_force()
+        # self.grab_set()
+        # self.focus_force()
+        self.focus()
 
         self.name_var = tk.StringVar(value=edit.get("name") if edit else "")
         self.type_var = tk.StringVar(value=edit.get("type") if edit else "строка")
@@ -316,17 +319,17 @@ class ParamDialog(tk.Toplevel):
         param = {"name": name, "type": ptype}
         if self.on_save:
             self.on_save(param)
-        try:
-            self.grab_release()
-        except Exception:
-            pass
+        # try:
+        #     self.grab_release()
+        # except Exception:
+        #     pass
         self.destroy()
 
     def _cancel(self):
-        try:
-            self.grab_release()
-        except Exception:
-            pass
+        # try:
+        #     self.grab_release()
+        # except Exception:
+        #     pass
         self.destroy()
 
 
@@ -341,8 +344,9 @@ class RunDialog(tk.Toplevel):
         self.title(f"Запуск: {script.get('name')}")
         self.geometry("800x500")
         self.transient(parent)
-        self.grab_set()
-        self.focus_force()
+        # self.grab_set()
+        # self.focus_force()
+        self.focus()
 
         self.entries = {}  # name -> (widget, type)
         self._build_ui()
@@ -366,12 +370,12 @@ class RunDialog(tk.Toplevel):
                     if fp:
                         e.delete(0, tk.END)
                         e.insert(0, fp)
-                        try:
-                            self.lift()
-                            self.focus_force()
-                            self.grab_set()
-                        except Exception:
-                            pass
+                        # try:
+                        #     self.lift()
+                        #     self.focus_force()
+                        #     self.grab_set()
+                        # except Exception:
+                        #     pass
                 ttk.Button(top_fr, text="...", width=3, command=_choose).grid(row=i, column=2, **pad)
             elif p["type"] == "путь до директории":
                 def _choose(e=ent):
@@ -379,12 +383,12 @@ class RunDialog(tk.Toplevel):
                     if fp:
                         e.delete(0, tk.END)
                         e.insert(0, fp)
-                        try:
-                            self.lift()
-                            self.focus_force()
-                            self.grab_set()
-                        except Exception:
-                            pass
+                        # try:
+                        #     self.lift()
+                        #     self.focus_force()
+                        #     self.grab_set()
+                        # except Exception:
+                        #     pass
                 ttk.Button(top_fr, text="...", width=3, command=_choose).grid(row=i, column=2, **pad)
             self.entries[p["name"]] = (ent, p["type"])
 
@@ -567,10 +571,10 @@ class RunDialog(tk.Toplevel):
         t.start()
 
     def _on_close(self):
-        try:
-            self.grab_release()
-        except Exception:
-            pass
+        # try:
+        #     self.grab_release()
+        # except Exception:
+        #     pass
         self.destroy()
 
 
@@ -795,7 +799,8 @@ class ScriptApp:
         path = s.get("path")
         try:
             if sys.platform.startswith("win"):
-                os.startfile(path)
+                current_dir = Path(__file__).resolve().parent
+                os.startfile(current_dir / path)
             elif sys.platform == "darwin":
                 subprocess.run(["open", path])
             else:

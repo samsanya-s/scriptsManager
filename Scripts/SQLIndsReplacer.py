@@ -57,7 +57,7 @@ def main(input_file: str, output_file: str):
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(transformed)
 
-    print(f"✅ Обработка завершена. Результат сохранён в {output_file}")
+    print(f"Обработка завершена. Результат сохранён в {output_file}")
 
 # if __name__ == "__main__":
 #     if len(sys.argv) < 3:

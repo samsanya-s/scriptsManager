@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 def convert_dictionary_to_user_dict(dictionary):
     user_dict = ET.Element('UserDictionary', {
         'code': dictionary.attrib['Code'],
-        'description': dictionary.attrib['Name'],
+        'description': dictionary.attrib['Description'],
         'lineStartSearching': 'false',
         'name': dictionary.attrib['Name'],
         'sortField': 'orderIndex'
@@ -12,8 +12,6 @@ def convert_dictionary_to_user_dict(dictionary):
     for value in dictionary.findall('Value'):
         code = value.attrib['Code']
         name = value.attrib['Name']
-        if code == "5":
-            continue  # Пропустить значение с Code="5"
         ET.SubElement(user_dict, 'Item', {'code': code, 'name': name})
 
     return user_dict
@@ -39,7 +37,7 @@ def main(input_file, output_file, dictionary_code):
     # while 1:
         # dictionary_code = input("Введите код: ")
         # input_file = "C:\\Users\\a.medvedev\\Documents\\code\\dictionary.xml"
-
+    # print(1)
     try:
         input_tree = ET.parse(input_file)
         input_root = input_tree.getroot()
@@ -47,9 +45,10 @@ def main(input_file, output_file, dictionary_code):
         dictionaries = input_root.findall(f'.//DictionaryTypeDTO[@Code="{dictionary_code}"]')
         if not dictionaries:
             print("Не найдено ни одного DictionaryTypeDTO.")
-            return
+            exit(-1)
 
         new_user_dicts = [convert_dictionary_to_user_dict(d) for d in dictionaries]
+        print(dictionaries)
 
         # Укажи путь к существующему XML-файлу (с тегом <Data>)
         # output_file = "C:\\Users\\a.medvedev\\Documents\\scripts\\migrateConfEt2to3\\test_migr_ok\\dicts\\userDictionary\\userDictionary.xml"
